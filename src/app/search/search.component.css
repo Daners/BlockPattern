@@ -1,0 +1,9 @@
+mat-form-field.mat-form-field {
+  font-size: 16px;
+}
+
+.search-container {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}

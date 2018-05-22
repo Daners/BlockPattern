@@ -1,0 +1,23 @@
+.dialog-head {
+    position: relative;
+    -webkit-transition: box-shadow .1s ease-in-out;
+    transition: box-shadow .1s ease-in-out;
+    width: 100%;
+    z-index: 1;
+}
+
+.avatar-edit{
+  display: inline;
+  padding-right: 10px;
+}
+
+.container-form{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.container-form > * {
+  width: 100%;
+  margin-bottom: 10px
+}

@@ -1,0 +1,73 @@
+<!-- <h1 mat-dialog-title>Hi </h1> -->
+
+    <div class="mat-title">Editar contacto</div>
+<mat-accordion>
+
+  <mat-expansion-panel expanded="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Informacion Personal
+      </mat-panel-title>
+      <mat-panel-description>
+        Nombre Telefono
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+<div mat-dialog-content>
+  <div class="avatar-edit">
+    <button  mat-icon-button class="user-btn">
+      <img mat-card-avatar  src="https://material.angular.io/assets/img/examples/shiba1.jpg"  class="example-header-image">
+  </button>
+  </div>
+  <div class="container-form">
+
+  <mat-form-field hintLabel="Max 10 characters">
+   <input matInput #input maxlength="10" [(ngModel)]="data.title" >
+   <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+ </mat-form-field>
+
+ <mat-form-field>
+   <mat-select placeholder="Tipo" [(ngModel)]="data.type">
+     <mat-option value="Cliente">Cliente</mat-option>
+     <mat-option value="Provedor">Provedor</mat-option>
+   </mat-select>
+   <mat-icon matPrefix>person</mat-icon>
+ </mat-form-field>
+
+ <mat-form-field >
+  <input matInput #tel  [(ngModel)]="data.telefono" placeholder="Telefono">
+   <mat-icon matPrefix>call</mat-icon>
+</mat-form-field>
+
+<mat-form-field>
+    <input matInput placeholder="Enter your email" [formControl]="email" required [(ngModel)]="data.email">
+    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+<mat-form-field hintLabel="">
+ <input matInput #tel  [(ngModel)]="data.dir" placeholder="Direccion">
+
+  <mat-icon matPrefix>place</mat-icon>
+</mat-form-field>
+
+ </div>
+</div>
+  </mat-expansion-panel>
+   <mat-expansion-panel>
+  <!--(opened)="panelOpenState = true"
+                     (closed)="panelOpenState = false" -->
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Self aware panel
+    </mat-panel-title>
+    <mat-panel-description>
+      Currently I am 
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <p>I'm visible because I am open</p>
+</mat-expansion-panel>
+
+</mat-accordion>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>
